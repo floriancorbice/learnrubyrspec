@@ -1,51 +1,42 @@
-def who_is_bigger(a, b, c)
+def echo(string)
+  string
+end
 
-  if a.nil? || b.nil? || c.nil?
+def shout(string)
+  string.upcase
+end
 
-    "nil detected"
+def repeat(string, repeats=2)
+  build = string
+  amount = repeats -1
+  amount.times { build += " #{string}" }
+  build
+end
 
-  elsif (a < b && b > c)
+def start_of_word(string, num)
+  string[0..(num-1)]
+end
 
-     "b is bigger"
+def first_word(string)
+  string.split(" ")[0]
+end
 
-  elsif (a < c && c > b)
-
-      "c is bigger"
-
-  elsif (b < a && a > c)
-
-      "a is bigger"
-
+def titleize(string)
+  list = string.split(" ")
+  list[0].capitalize!
+  list[1..-1].each do |word| 
+    word.capitalize! unless little_word?(word)
+  end
+  if list.length > 1
+    final_list = list.inject(""){ |line, word| line + " #{word}"}.strip
+  else
+    string.capitalize
   end
 end
-  end
-  sum = Array.new
 
-def sum(sum)
-
-  sum.sum
-
+def little_word?(string)
+  ["and", "or", "of", "in", "a", "the", "over"].include?(string)
 end
 
-  def reverse_upcase_noLTA(my_string)
 
-  string_reverse = my_string.reverse!
-
-  string_upcase = string_reverse.upcase
-
-  without_L = string_upcase.tr('L', '')
-
-  without_T = without_L.tr('T', '')
-
-  without_A = without_T.tr('A', '')
-
-end
-
-arr = Array.new
-
-def array_42(arr)
-
-  arr.include? 42
-
-end
   
