@@ -1,7 +1,3 @@
-def padded(num)
- if num<=9
-   return "0"<<num.to_s
- else 
-   return num.to_s
- end
+def time_string (t1)
+Time.at(t1).utc.strftime("%H:%M:%S")
 end
